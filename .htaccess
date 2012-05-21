@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+#RewriteCond %{REQUEST_URI} !^/(ordner1|ordner2|ordner3)
+##RewriteCond %{REQUEST_FILENAME} !-f
+##RewriteCond %{REQUEST_FILENAME} !-d
+##RewriteRule ^(.*)$ index.php
+
+RewriteRule ^photo/my-images/([1-9][0-9][0-9])/(.*)/$ viewer.php?folder=$1&image=$2 [L]
+</IfModule>
